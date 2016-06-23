@@ -21,3 +21,4 @@ Possible links:
 * http://www.sdss.org/dr12/
 * http://heasarc.nasa.gov/W3Browse/all/pgc2003.html
 * http://leda.univ-lyon1.fr/intro.html http://leda.univ-lyon1.fr/sample.html <-- see if you can take this catalog
+* https://www.reddit.com/r/datasets/comments/250c3m/request_any_and_all_solar_system_galaxy_universe/ (galaxyzoo download)
