@@ -1,6 +1,5 @@
 #Set working directory, open files, fire up the libraries
-# setwd("~/Dropbox/R/Star Catalog")
-setwd("C:/Users/mcarozzo/Desktop/")
+setwd("~/Dropbox/R/Star Catalog")
 galaxies <- read.csv("galaxies.csv", na.strings="-")
 library(ggplot2)
 
