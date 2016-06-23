@@ -6,7 +6,7 @@
 
 ## Image
 
-~[Galaxy Distance vs. Velocity](https://raw.githubusercontent.com/zonination/galaxies/master/galaxies.png)
+![Galaxy Distance vs. Velocity](https://raw.githubusercontent.com/zonination/galaxies/master/galaxies.png)
 
 ## Tools
 
