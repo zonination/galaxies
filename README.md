@@ -20,3 +20,4 @@ Possible links:
 
 * http://www.sdss.org/dr12/
 * http://heasarc.nasa.gov/W3Browse/all/pgc2003.html
+* http://leda.univ-lyon1.fr/intro.html <-- see if you can take this catalog
