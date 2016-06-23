@@ -19,3 +19,4 @@ Still trying to figure out the original source. Please stand by.
 Possible links:
 
 * http://www.sdss.org/dr12/
+* http://heasarc.nasa.gov/W3Browse/all/pgc2003.html
