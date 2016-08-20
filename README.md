@@ -10,13 +10,10 @@
 
 ### Age of the Universe
 
-## Tools
+## Information
 
-The data was compiled with R, and graphed in ggplot2.
-
-## Source
-
-[HyperLeda](http://leda.univ-lyon1.fr/leda/fullsql.html), using the command: `SELECT objname, mod0, vgsr WHERE mod0 IS NOT NULL`
+* **Tools:** The data was compiled with R, and graphed in ggplot2.
+* **Source:** [HyperLeda](http://leda.univ-lyon1.fr/leda/fullsql.html), using the command: `SELECT objname, mod0, vgsr WHERE mod0 IS NOT NULL`
 
 ## Further Reading
 
