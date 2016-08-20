@@ -1,8 +1,10 @@
-# Galaxy Redshift, and the Age of the Universe
+# How to Calculate the Age of the Universe
 
 ## Image
 
 ![Galaxy Distance vs. Velocity](https://raw.githubusercontent.com/zonination/galaxies/master/galaxies.png)
+
+
 
 ## Calculations
 
@@ -20,3 +22,4 @@
 * HyperLeda's [Documentation on Physical Parameters](http://leda.univ-lyon1.fr/leda/table.html)
 * Wikipedia's article on [Distance Modulus](https://en.wikipedia.org/wiki/Distance_modulus)
 * Wikipedia's article on [Local Standard of Rest](https://en.wikipedia.org/wiki/Local_standard_of_rest)
+* Wikipedia's article on [Hubble's Law](https://en.wikipedia.org/wiki/Hubble%27s_law)
