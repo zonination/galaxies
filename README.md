@@ -10,11 +10,11 @@
 
 Data was taken from [HyperLeda](http://leda.univ-lyon1.fr/leda/fullsql.html), using the command: `SELECT objname, mod0, vgsr WHERE mod0 IS NOT NULL`, basically taking all the distance vs. velocity data they had available (4240 galaxies). After doing a quick conversion from Distance Modulus to Megaparsecs (1 Megaparsec = 3.086x10^19 km), here's what the plot looks like:
 
-![All Data](https://raw.githubusercontent.com/zonination/galaxies/master/other/rplot01.png)
+![All Data](https://raw.githubusercontent.com/zonination/galaxies/master/other/Rplot01.png)
 
 Hmm. This doesn't look too good. There's a huge cluster towards the origin, and a lot of sparse data and outliers on the extremes. This could really screw with our final value. Let's cut the extreme data out and just focus inside the red box I highlighted:
 
-![Less Extreme Data](https://raw.githubusercontent.com/zonination/galaxies/master/other/rplot02.png)
+![Less Extreme Data](https://raw.githubusercontent.com/zonination/galaxies/master/other/Rplot02.png)
 
 This looks much better. The cluster is a lot more even, and there are fewer (if any) outliers. Our total galaxy count is now 3908, still 92% of our data. The data range is `x<=250, y<=15000`. This is the set we'll use for our calculation on the age of the universe.
 
@@ -22,7 +22,7 @@ This looks much better. The cluster is a lot more even, and there are fewer (if 
 
 Find it odd that the further the galaxies are from you, the faster they're moving away from you? So did Catholic priest [Georges Lemaître](https://en.wikipedia.org/wiki/Georges_Lema%C3%AEtre). Georges figured that, if you have objects moving away from you at a speed proportional to their distance from you, then [abductively speaking](https://en.wikipedia.org/wiki/Abductive_reasoning), there must have been some kind of explosion that took place before. Take, for instance, the following diagram, which is simulated using the program in the `other` folder:
 
-![Small Particle Explosion](https://raw.githubusercontent.com/zonination/galaxies/master/other/rplot03.png)
+![Small Particle Explosion](https://raw.githubusercontent.com/zonination/galaxies/master/other/Rplot03.png)
 
 From this plot, you can intuitively figure two things:
 
@@ -31,7 +31,7 @@ From this plot, you can intuitively figure two things:
 
 Here's what it looks like when these particles are plotted as speed vs. distance:
 
-![Small Particle Explosion](https://raw.githubusercontent.com/zonination/galaxies/master/other/rplot04.png)
+![Small Particle Explosion](https://raw.githubusercontent.com/zonination/galaxies/master/other/Rplot04.png)
 
 ## The Calculation
 
