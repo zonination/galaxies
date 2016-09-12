@@ -6,7 +6,7 @@
 
 *According to this data, the age of the universe is 13.773 billion years old. This is -0.187% off from the [accepted value](https://en.wikipedia.org/wiki/Age_of_the_universe) of 13.799 billion years old.*
 
-## Finding and Filtering the Data
+## Step 1: Find and Filter the Data
 
 Data was taken from [HyperLeda](http://leda.univ-lyon1.fr/leda/fullsql.html), using the command: `SELECT objname, mod0, vgsr WHERE mod0 IS NOT NULL`, basically taking all the distance vs. velocity data they had available (4240 galaxies). After doing a quick conversion from Distance Modulus to Megaparsecs (1 Megaparsec = 3.086x10^19 km), here's what the plot looks like:
 
@@ -18,7 +18,7 @@ Hmm. This doesn't look too good. There's a huge cluster towards the origin, and 
 
 This looks much better. The cluster is a lot more even, and there are fewer (if any) outliers. Our total galaxy count is now 3908, still 92% of our data. The data range is `x<=250, y<=15000`. This is the set we'll use for our calculation on the age of the universe.
 
-## A Brief History Lesson in Kinematics
+## Step 2: Brush up on your Kinematics
 
 Find it odd that the further the galaxies are from you, the faster they're moving away from you? So did Catholic priest [Georges Lemaître](https://en.wikipedia.org/wiki/Georges_Lema%C3%AEtre). Georges figured that, if you have objects moving away from you at a speed proportional to their distance from you, then [abductively speaking](https://en.wikipedia.org/wiki/Abductive_reasoning), there must have been some kind of explosion that took place before. Take, for instance, the following diagram, which is simulated using the program in the `other` folder:
 
@@ -33,7 +33,9 @@ Here's what it looks like when these particles are plotted as speed vs. distance
 
 ![Small Particle Explosion](https://raw.githubusercontent.com/zonination/galaxies/master/other/Rplot04.png)
 
-## The Calculation
+Both these plots, by the way, would look similar if you chose any point on this plot as the center. 
+
+## Step 3: Do some simple Calculations
 
 ## Information
 
