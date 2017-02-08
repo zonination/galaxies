@@ -20,6 +20,7 @@ ggplot(galaxies2,aes(distmpc,vgsr))+
   # scale_x_continuous(limits=c(0,6.15e21))+
   # scale_y_continuous(limits=c(-500,15000))+
   labs(title="The Expanding Universe",
+       subtitle="The slope of this line is equal to 13.77 billion years",
        x="Distance from Earth (MPc)",
        y="Velocity Away from Earth (km/s)",
        caption="created by /u/zonination")+
