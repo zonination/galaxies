@@ -37,7 +37,11 @@ Both these plots, by the way, would look similar if you chose any point on this 
 
 ## Step 3: Do some simple Calculations
 
-As we know from physics, velocity times time equals distance (`d = v*t`). If we convert to a consistent set of units, divide distance (km) over velocity (km/s), we get time. A simple regression line works; the slope will be time in seconds. Convert into years, and, with this data, we get 13.77 billion years. That's pretty close.
+As we know from physics, velocity times time equals distance (`d = v*t`). If we convert to a consistent set of units, divide distance (km) over velocity (km/s), we get time (s). A simple regression line works if you switch x and y (set the intercept to 0); the slope will be time in seconds. Convert into years, and, with this data, we get 13.77 billion years. That's pretty close.
+
+Edited to add: from [another redditor](https://np.reddit.com/r/dataisbeautiful/comments/5st2qn/i_got_a_dataset_of_4240_galaxies_and_calculated/ddhm212?context=3):
+
+> You may want to add that the age of the universe isn't really 1/H_0 (that's what OP computed), but there is a correction factor (that can be determined from the relative abundance of dark energy/(dark) matter/radiation) that just turns out to be very close to 1 for our universe.
 
 ## Information
 
