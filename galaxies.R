@@ -1,47 +1,37 @@
 #Set working directory, open files, fire up the libraries
-setwd("~/Dropbox/R/Star Catalog")
-galaxies <- read.csv("galaxies.csv", na.strings="-")
+# setwd("~/Dropbox/R/Star Catalog")
+galaxies <- read.csv("galaxies.csv")
+source("z_theme.R")
 library(ggplot2)
 
-z_theme <- function() {
-  theme_bw(base_size=9) +
-    #Background and Grid formatting
-    theme(panel.background=element_rect(fill="#000000", color="#000000")) +
-    theme(plot.background=element_rect(fill="#000000", color="#000000")) +
-    theme(panel.border=element_rect(color="#252525")) +
-    theme(panel.grid.major=element_blank()) +
-    theme(panel.grid.minor=element_blank()) +
-    #Legend formatting
-    theme(legend.background = element_rect(fill="#000000")) +
-    theme(legend.text = element_blank()) +
-    theme(legend.title= element_blank())+
-    theme(legend.position="none")+
-    #Axis & Title Formatting
-    theme(plot.title=element_text(color="#D9D9D9", size=20, vjust=1.25)) +
-    theme(axis.ticks=element_blank()) +
-    theme(axis.text.x=element_text(size=14,color="#BDBDBD")) +
-    theme(axis.text.y=element_text(size=14,color="#BDBDBD")) +
-    theme(axis.title.x=element_text(size=16,color="#BDBDBD", vjust=0)) +
-    theme(axis.title.y=element_text(size=16,color="#BDBDBD", vjust=1.25))
-}
+# Convert Distance Modulus to MegaParsecs
+galaxies$distmpc<-10^(1+galaxies$mod0/5)/1e6
+# Convert Parsecs to Kilometers
+galaxies$dist<-galaxies$distmpc*3.085678e+13*1e6
 
-#Calculate the hubble constant. Set the Y intercept to 0.
-print(lm(velocitykms~0+distancempc,data=galaxies))
-# Hubble constant = 72.65 (km/sec)/Mpc
-# The reciprocal of the Hubble Constant is the age of the universe:
-# print((72.65/3.086e19)^-1 /(60*60*24*365.25))
-# 13.46 billion years as the universe's age, not terribly far off.
+# Use close galaxies for our estimation
+# galaxies2<-subset(galaxies,vgsr<=15000)
+galaxies2<-subset(galaxies,distmpc<=250&vgsr<=15000)
 
-# Final Plot
-# Recommended Size = 900 x 600
-galaxies$randomseed<-runif(nrow(galaxies),min=0,max=2*pi)
-  ggplot(galaxies,aes(distancempc,velocitykms))+
-  geom_point(size=.5,shape=".",aes(color=velocitykms))+
-  geom_smooth(method="lm",se=F,color="blue",linetype=3,formula=y~0+x)+
+ggplot(galaxies2,aes(distmpc,vgsr))+
+  geom_point(shape=".",aes(color=vgsr))+
   scale_color_gradientn(colours=c("white","orange","red","darkred"))+
-  ylab("Velocity (km/sec)")+
-  xlab("Distance (Mpc)")+
-  ggtitle("Galaxy Redshift")+
-  scale_y_continuous(limits=c(0,15000))+
-  scale_x_continuous(limits=c(0,200))+
+  geom_smooth(method=lm,formula=y~x+0,linetype=4,size=.5,se=F)+
+  # scale_x_continuous(limits=c(0,6.15e21))+
+  # scale_y_continuous(limits=c(-500,15000))+
+  labs(title="The Expanding Universe",
+       x="Distance from Earth (MPc)",
+       y="Velocity Away from Earth (km/s)",
+       caption="created by /u/zonination")+
   z_theme()
+ggsave("galaxies.png",dpi=100, height=6, width=9, type="cairo-png")
+
+# Accepted value for Age of Universe:
+accage<-13.799e9 # Years
+
+# Calculate the age of the universe:
+calcage<-lm(dist~vgsr+0,data=galaxies2)$coefficients[1]/60/60/24/365.24
+paste("Age of Universe:",signif(calcage,5),"years")
+paste("Relative Error from accepted Age: ",
+            signif(100*(calcage-accage)/accage,5)
+            ,"%",sep="")
