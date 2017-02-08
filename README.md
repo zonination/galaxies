@@ -37,6 +37,8 @@ Both these plots, by the way, would look similar if you chose any point on this 
 
 ## Step 3: Do some simple Calculations
 
+As we know from physics, velocity times time equals distance (`d = v*t`). If we convert to a consistent set of units, divide distance (km) over velocity (km/s), we get time. A simple regression line works; the slope will be time in seconds. Convert into years, and, with this data, we get 13.77 billion years. That's pretty close.
+
 ## Information
 
 * **Tools:** The data was compiled with R, and graphed in ggplot2.
